@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+/* 基本レイアウト>PC用レイアウト>SP用レイアウト */
+/* jsを用いずにチェックボックスで分岐させている */
+
+/* 基本CSS */
+ul,
+div,
+img {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: normal;
+}
+
+/*ヘッダー*/
+/*展開したメニューがmainより上に来るようにする*/
+header {
+  z-index: 20;
+  position: relative;
+}
+
+/* チェックボックスを非表示 */
+#navi input {
+  display: none;
+}
+
+/* 上部メニュー位置 */
+.wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+#page-header {
+  display: flex;  /* 子要素（左ボタンと右ボタン群）を左右寄せ*/
+}
+#menu-left {
+  font-size: 1rem;
+  margin-top: 34px;
+  text-decoration: none;
+  line-height: 2.5rem;
+}
+#menu-left > a {
+  color: #000;
+  font-family: 'Source Sans Pro', serif;
+  text-decoration: none;
+  font-weight: normal;
+}
+#menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 34px;
+  list-style: none;
+}
+#menu > li {
+  color: #000;
+  margin: 0 1rem;
+  padding: 0 1rem 0 1rem;
+  line-height: 3rem;
+  transition: all 0.5s ease-out;
+  position: relative;
+}
+#menu > li a {
+  color: #000;
+  font-family: 'Source Sans Pro', serif;
+  text-decoration: none;
+  font-weight: normal;
+}
+/*リンク範囲の拡張*/
+#menu > li > ul > li > a,
+#menu > li > ul > li > ul > li > a {
+  display: block;
+}
+
+/*ナビボタンのチェックボックス非表示*/
+#menu-navibtn {
+  display: none;
+}
+
+/* ドロップダウンメニューの位置の設定 */
+
+/* 子メニューをすべて非表示に */
+/* ここがないと子メニューが収納されずにぜんぶ並んで表示される */
+/*第一階層*/
+#menu li ul {
+  position: absolute;
+  left: 1rem;
+}
+/*第二階層*/
+#menu > li > ul li {
+  opacity: 0;
+  color: #000;
+  line-height: 3rem;
+  width: 5rem;
+  background: rgba(255, 255, 255, 0.4);
+}
+#menu > li > ul li a {     /*第二階層以降の文字位置を１文字分右へ*/
+  padding-left: 1rem;      /*paddingをliにつけるとdisplay:blockで選択範囲せっかく拡張したのにその分選択が効かなくなる*/
+}
+/*第三階層の位置設定*/
+#menu-child-life {
+  position: relative;
+  padding-left: 1rem;
+}
+#menu li ul li ul {
+  position: absolute;
+  left: 100%;
+  top: 0rem;
+}
+
+/* パソコン用 */
+@media screen and (min-width: 620px) {
+  /* 親メニューにホバーしたときにドロップダウンが表示される */
+  #menu-left a:hover,
+  #menu li:hover,
+  #menu li a:hover {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-out;
+  }
+  #menu li ul li:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.5s ease-out;
+  }
+  #menu > li:hover > ul > li,
+  #menu li ul li:hover > ul > li {
+    opacity: 1;
+    transition: all 0.5s ease-out;
+  }
+  /*PCだけメニューが左右からフェードインするアニメーション入れる*/
+  .fade-in-left {
+    opacity: 0;
+    opacity: 0;
+    animation-name: fadein-left;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;  
+  }
+  @keyframes fadein-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .fade-in-right {
+    opacity: 0;
+    animation-name: fadein-right;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;  
+  }
+  @keyframes fadein-right {
+    0% {
+       opacity: 0;
+       transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* スマホ用レイアウト1 */
+@media screen and (max-width: 620px) {
+  #main h2 {
+    font-size: 1.3rem;
+  }
+  #main p{
+    font-size: 0.7rem;
+  }
+  /* メニューを基本非表示に */
+  #menu-left {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    background-color:  rgba(0, 0, 0, 0.8);
+    display: none;
+    width: 20rem;
+  }
+  /*メニュー基本レイアウト*/
+  #menu {
+    margin-top: 0;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    background-color:  rgba(0, 0, 0, 0.8);
+    display: none;
+    width: 20rem;
+  }
+  #navi {
+    width: 100%;
+  }
+  #page-header {
+    display: flex;
+    flex-direction: column;
+  }
+  /*第一階層レイアウト*/
+  #menu > li {
+    height: auto;
+    width: 100%;
+    padding: 0px 20px;
+    padding-left: 1rem;
+    margin-right: -20px;
+    position: relative;
+  }
+  #menu-left a {
+    max-height: inherit;
+    margin: 0;
+    padding-left: 4rem;
+    font-size: 1rem;
+    color: #DDD;
+  }
+  #menu li a,
+  #menu li > label{
+    max-height: inherit;
+    margin: 0;
+    padding-left: 2rem;
+    font-size: 1rem;
+    color: #DDD;
+  }
+  /* 第二階層レイアウト */
+  #menu > li > ul {
+    position: relative;
+    display: none;
+    margin-left: 1rem;
+    line-height: 3rem;
+  }
+  #menu > li > ul li {
+    background: none;
+    padding-left: 1rem;
+    width: 6rem ;
+  }
+  #menu > li > ul li a,
+  #menu > li > ul li label{
+    padding: 0rem;
+  }
+  #menu li ul li:last-child {
+    border-bottom: none;
+  }
+  /* 第三階層レイアウト */
+  #menu > li > ul > li > ul {
+    position: relative;
+    display: none;
+    left: 0;
+  }
+  /* 第一階層のphotographがクリックされた時 */
+  #menu input[type="checkbox"]:checked ~ label ~ ul {
+    max-height: inherit;
+    display: block;
+  }
+  #menu input[type="checkbox"]:checked ~ label ~ ul li {
+    opacity: 1;
+  }
+  .angletoggle:before {
+    content: "\f107";
+  }
+  #navi input[type="checkbox"]:checked ~ label .pd .angletoggle:before {
+    content: "\f106";
+  }
+  /* 第二階層のlifeがクリックされた時 */
+  #menu input[type="checkbox"]:checked ~ label ~ ul {
+    max-height: inherit;
+    display: block;
+  }
+  #menu input[type="checkbox"]:checked ~ label ~ ul li {
+    opacity: 1;
+  }
+  .angletoggle:before {
+    content: "\f107";
+  }
+  #navi input[type="checkbox"]:checked ~ label .pd .angletoggle:before {
+    content: "\f106";
+  }
+  /*仕切り線*/
+  #menu li:first-child {
+    border-top: 1px solid #DDD;
+  }
+  #menu li ul li:last-child {
+    border-bottom: 1px solid #DDD;
+  }
+  /* V を表示 */
+  #menu > li .pd {
+    display: inline-block;
+  }
+  /* メニューを移動させないため */
+  #menu-navibtn:checked ~ #navi {
+    position: fixed;
+    height: 100%;
+  }
+
+  /* ハンバーガーメニューがクリックされた時menuを全て表示 */
+  #menu-navibtn:checked ~ * #menu,    /*「~ *」の意味よくわかってない*/
+  #menu-navibtn:checked ~ * #menu-left {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* スマホ用レイアウト2：ハンバーガーマーク🈪の作成・表示 */
+#navi #navibtn {
+  display: none;
+}
+@media screen and (max-width: 620px) {
+  #navi #navibtn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #navibtn span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+  }
+  #navibtn span span {
+    display: block;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  #navibtn span span::before,
+  #navibtn span span::after,
+  #navibtn span::after {
+    position: absolute;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+  }
+  /* 上の棒 */
+  #navibtn span span::before {
+    top:10px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn span span::before {
+    top:19px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  /* 下の棒 */
+  #navibtn span::after {
+    bottom:10px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn > span::after {
+    bottom:18px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  /* 中の棒 */
+  #navibtn span span::after {
+    top:18px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn span span::after {
+    display: none;
+  }
+}
+
+
+/* 本文の位置設定 */
+#main {
+  text-align: center;
+  margin-top: 20rem;
+  z-index: 10;
+  position: relative; /*z-indexを使うため*/
+}
+#main p{
+  font-size: 1.125rem;
+  margin:10px 0 42px;
+}
+.page-title {
+  font-size: 2rem;
+  font-family: 'Source Sans Pro', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+/*大きな背景写真*/
+.big-bg{
+  background-size: cover;
+  background-position: center top;
+}
+#home{
+  background-image: url(../images/index1.jpg);
+  height: 60rem;
+  overflow: hidden;
+}
+
+/*フッター*/
+footer {
+  background-color: #222;
+  text-align: center;
+  padding: 4rem 0;
+}
+footer p{
+  color: white;
+  font-size: 0.875rem;
+}
+
+/*下からフェードインするアニメーション*/
+/*animation propaty：速さ・時間・回数などのコントロール*/
+.fade-in-bottom {
+  opacity: 0;
+  animation-name: fadein-bottom;
+  animation-duration: 2s;               /*時間*/
+  animation-timing-function: ease-out;    /*おわりゆっくり動かす*/
+  animation-fill-mode: forwards;          /*おわった後はそのままキープ*/
+  animation-delay: 1s;                    /*フェードインのタイミング指定*/
+}
+ /*keyframes：色形大きさなどアニメーション本体の変化*/
+@keyframes fadein-bottom {
+  0% {                                    /*開始時の状態*/
+     opacity: 0;                          /*透明度指定*/
+     transform: translateY(20px);         /*下に20pxずれた状態*/
+  }
+  100% {                                  /*終了時の状態*/
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+

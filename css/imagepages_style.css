@@ -1,0 +1,499 @@
+@charset "UTF-8";
+
+/* 基本CSS */
+ul,
+div,
+img {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: normal;
+}
+
+
+/*共通部分*/
+html{
+    font-size: 100%;
+}
+body{
+    font-family: 'Source Sans Pro', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height:1.7;
+    color: #eee;
+    background-color: #111;
+}
+#home {
+    overflow: hidden;
+}
+/*下からフェードインするアニメーション*/
+body {
+   opacity: 0;
+   animation-name: fadein-bottom;
+   animation-duration: 2s;               /*時間*/
+   animation-timing-function: ease-out;    /*おわりゆっくり動かす*/
+   animation-fill-mode: forwards;          /*おわった後はそのままキープ*/
+   animation-delay: 1s;                    /*フェードインのタイミング指定*/
+}
+@keyframes fadein-bottom {
+   0% {                                    /*開始時の状態*/
+      opacity: 0;                          /*透明度指定*/
+      transform: translateY(20px);         /*下に20pxずれた状態*/
+   }
+   100% {                                  /*終了時の状態*/
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+img{
+    max-width: 100%;
+}
+
+/*ヘッダー*/
+/*展開したメニューがmainより上に来るようにする*/
+header {
+  z-index: 20;
+  position: relative;
+}
+/* チェックボックスを非表示 */
+#navi input {
+  display: none;
+}
+
+/* 上部メニュー位置 */
+.wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+#page-header {
+  display: flex;  /* 子要素（左ボタンと右ボタン群）を左右寄せ*/
+}
+#menu-left {
+  font-size: 1rem;
+  margin-top: 34px;
+  text-decoration: none;
+  line-height: 2.5rem;
+}
+#menu-left > a {
+  color: #ddd;
+  font-family: 'Source Sans Pro', serif;
+  text-decoration: none;
+  font-weight: normal;
+}
+#menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 34px;
+  list-style: none;
+}
+#menu > li {
+  color: #ddd;
+  margin: 0 1rem;
+  padding: 0 1rem 0 1rem;
+  line-height: 3rem;
+  transition: all 0.5s ease-out;
+  position: relative;
+}
+#menu > li a {
+  color: #ddd;
+  font-family: 'Source Sans Pro', serif;
+  text-decoration: none;
+  font-weight: normal;
+}
+/*リンク範囲の拡張*/
+#menu > li > ul > li > a,
+#menu > li > ul > li > ul > li > a {
+  display: block;
+}
+
+/*ナビボタンのチェックボックス非表示*/
+#menu-navibtn {
+  display: none;
+}
+
+/* ドロップダウンメニューの位置の設定 */
+
+/* 子メニューをすべて非表示に */
+/* ここがないと子メニューが収納されずにぜんぶ並んで表示される */
+/*第一階層*/
+#menu li ul {
+  position: absolute;
+  left: 1rem;
+}
+/*第二階層*/
+#menu > li > ul li {
+  opacity: 0;
+  color: #ddd;
+  line-height: 3rem;
+  width: 5rem;
+  background: rgba(255, 255, 255, 0.4);
+}
+#menu > li > ul li a {     /*第二階層以降の文字位置を１文字分右へ*/
+  padding-left: 1rem;      /*paddingをliにつけるとdisplay:blockで選択範囲せっかく拡張したのにその分選択が効かなくなる*/
+}
+/*第三階層の位置設定*/
+#menu-child-life {
+  position: relative;
+  padding-left: 1rem;
+}
+#menu li ul li ul {
+  position: absolute;
+  left: 100%;
+  top: 0rem;
+}
+
+/* パソコン用 */
+@media screen and (min-width: 620px) {
+  /* 親メニューにホバーしたときにドロップダウンが表示される */
+  #menu-left a:hover,
+  #menu li:hover,
+  #menu li a:hover {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease-out;
+  }
+  #menu li ul li:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.5s ease-out;
+  }
+  #menu > li:hover > ul > li,
+  #menu li ul li:hover > ul > li {
+    opacity: 1;
+    transition: all 0.5s ease-out;
+  }
+  /*PCだけメニューが左右からフェードインするアニメーション入れる*/
+  .fade-in-left {
+    opacity: 0;
+    opacity: 0;
+    animation-name: fadein-left;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;  
+  }
+  @keyframes fadein-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .fade-in-right {
+    opacity: 0;
+    animation-name: fadein-right;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;  
+  }
+  @keyframes fadein-right {
+    0% {
+       opacity: 0;
+       transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* スマホ用レイアウト1 */
+@media screen and (max-width: 620px) {
+  /* メニューを基本非表示に */
+  #menu-left {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    background-color:  rgba(0, 0, 0, 0.8);
+    display: none;
+    width: 20rem;
+  }
+  /*メニュー基本レイアウト*/
+  #menu {
+    margin-top: 0;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    background-color:  rgba(0, 0, 0, 0.8);
+    display: none;
+    width: 20rem;
+  }
+  #navi {
+    width: 100%;
+  }
+  #page-header {
+    display: flex;
+    flex-direction: column;
+  }
+  /*第一階層レイアウト*/
+  #menu > li {
+    height: auto;
+    width: 100%;
+    padding: 0px 20px;
+    padding-left: 1rem;
+    margin-right: -20px;
+    position: relative;
+  }
+  #menu-left a {
+    max-height: inherit;
+    margin: 0;
+    padding-left: 4rem;
+    font-size: 1rem;
+    color: #DDD;
+  }
+  #menu li a,
+  #menu li > label{
+    max-height: inherit;
+    margin: 0;
+    padding-left: 2rem;
+    font-size: 1rem;
+    color: #DDD;
+  }
+  /* 第二階層レイアウト */
+  #menu > li > ul {
+    position: relative;
+    display: none;
+    margin-left: 1rem;
+    line-height: 3rem;
+  }
+  #menu > li > ul li {
+    background: none;
+    padding-left: 1rem;
+    width: 6rem ;
+  }
+  #menu > li > ul li a,
+  #menu > li > ul li label{
+    padding: 0rem;
+  }
+  #menu li ul li:last-child {
+    border-bottom: none;
+  }
+  /* 第三階層レイアウト */
+  #menu > li > ul > li > ul {
+    position: relative;
+    display: none;
+    left: 0;
+  }
+  /* 第一階層のphotographがクリックされた時 */
+  #menu input[type="checkbox"]:checked ~ label ~ ul {
+    max-height: inherit;
+    display: block;
+  }
+  #menu input[type="checkbox"]:checked ~ label ~ ul li {
+    opacity: 1;
+  }
+  .angletoggle:before {
+    content: "\f107";
+  }
+  #navi input[type="checkbox"]:checked ~ label .pd .angletoggle:before {
+    content: "\f106";
+  }
+  /* 第二階層のlifeがクリックされた時 */
+  #menu input[type="checkbox"]:checked ~ label ~ ul {
+    max-height: inherit;
+    display: block;
+  }
+  #menu input[type="checkbox"]:checked ~ label ~ ul li {
+    opacity: 1;
+  }
+  .angletoggle:before {
+    content: "\f107";
+  }
+  #navi input[type="checkbox"]:checked ~ label .pd .angletoggle:before {
+    content: "\f106";
+  }
+  /*仕切り線*/
+  #menu li:first-child {
+    border-top: 1px solid #DDD;
+  }
+  #menu li ul li:last-child {
+    border-bottom: 1px solid #DDD;
+  }
+  /* V を表示 */
+  #menu > li .pd {
+    display: inline-block;
+  }
+  /* メニューを移動させないため */
+  #menu-navibtn:checked ~ #navi {
+    position: fixed;
+    height: 100%;
+  }
+
+  /* ハンバーガーメニューがクリックされた時menuを全て表示 */
+  #menu-navibtn:checked ~ * #menu,    /*「~ *」の意味よくわかってない*/
+  #menu-navibtn:checked ~ * #menu-left {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* スマホ用レイアウト2：ハンバーガーマーク🈪の作成・表示 */
+#navi #navibtn {
+  display: none;
+}
+@media screen and (max-width: 620px) {
+  #navi #navibtn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  #navibtn span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+  }
+  #navibtn span span {
+    display: block;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  #navibtn span span::before,
+  #navibtn span span::after,
+  #navibtn span::after {
+    position: absolute;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+  }
+  /* 上の棒 */
+  #navibtn span span::before {
+    top:10px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn span span::before {
+    top:19px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  /* 下の棒 */
+  #navibtn span::after {
+    bottom:10px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn > span::after {
+    bottom:18px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  /* 中の棒 */
+  #navibtn span span::after {
+    top:18px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn span span::after {
+    display: none;
+  }
+}
+  
+
+/*HOME*/
+#main{
+    text-align: center;
+    margin-top: 10%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 0%;
+    max-width: 70%;
+    z-index: 10;
+    position: relative; /*z-indexを使うため*/
+}
+.imgalign {
+    margin: 7% 0% 1% 0%;
+}
+/*見出し*/
+.page-title {
+    font-size: 1.5rem;
+    margin-bottom: 8%;
+    padding-bottom: 2%;
+    font-family: 'Source Sans Pro', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: 2px solid gray;
+}
+/*テキスト*/
+.sub-content {
+    font-size: 1rem;
+    margin-top: 14%;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-weight: normal;
+    line-height: 4;
+    letter-spacing: 0.3em;
+    color: #bbb;
+}
+.sub-text {
+    font-size: 0.8rem;
+    margin-top: 8%;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-weight: normal;
+    line-height: 4;
+    letter-spacing: 0.3em;
+    color: #bbb;
+}
+
+.caption,
+.caption-center {
+    font-size: 0.8rem;
+    padding-right: 2rem;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: 0.3rem;
+    color: #bbb;
+}
+.caption {
+  text-align: right;
+}
+.caption-center {
+  text-align: center;
+}
+
+/* スマホ用レイアウト：本文用 */
+@media screen and (max-width: 620px){
+    #main{
+        max-width: 90%;
+    }
+    #main .page-title{
+        margin-top: 5rem;
+        padding-bottom: 2rem;
+        font-size: 1.3rem;
+    }
+    .imgalign {
+        margin: 15% 0 1% 0;
+    }
+    .sub-content{
+        font-size: 0.6rem;
+    }
+    .sub-text {
+        font-size: 0.3rem;
+        line-height: 3;
+        letter-spacing: 0.1rem;
+    }
+    .caption,
+    .caption-center {
+        font-size: 0.3rem;
+    }
+}
+
+
+/*フッター*/
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 4rem 0;
+}
+footer p{
+    color: #eee;
+    font-size: 0.875rem;
+}
+
+/* フェードイン用のCSS */
+.imgalign {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s 0s ease-out;
+}
