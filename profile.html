@@ -12,14 +12,16 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
-        <link rel="stylesheet" href="css/profile_style.css">
+        <link rel="stylesheet" href="css/imagepages_style.css">
         
         <!--このファイルだけレイアウトを変えるためサイズを制限するCSSを書く-->
         <style>
-            .main-container {display:grid}
-            .item {padding :5%}
+            .main-container {display:grid; grid-template-columns:1fr 1fr;}
+            .item {padding :5%; font-size: 0.6rem;}
+            .item img {max-width: 100%}
+            .item p {line-height: 3rem; letter-spacing: 0.1rem;}
             @media (max-width: 480px) {
-                .main-container {display:none}
+                .main-container {display:grid; grid-template-columns:1fr}
                 .item {padding :5%} 
             }
         </style>
@@ -66,7 +68,7 @@
                                 </ul>
                             </li>
                             <li><a href="works.html">works</a></li>
-                            <li><a href="prodile.html">profile / contact</a></li>
+                            <li><a href="profile.html">profile / contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -76,12 +78,12 @@
                 <h2 class="page-title" id="home">p r o f i l e / c o n t a c t</h2>
                 <div class = "main-container">
                     <div class = "item">
-                        <img href="">
+                        <img src="images/profile.jpg">
                     </div>
                     <div class = "item">
-                        <p>Kenichi KUSAMA</p>
-                        <p>Based in Yokohama</p>
-                        <p>e-mail : knich_ksm@yahoo.co.jp</p>
+                            <p>Kenichi KUSAMA<br>
+                            Based in Yokohama<br>
+                            e-mail : knich_ksm@yahoo.co.jp</p>
                     </div>
                 </div>
             </main>
