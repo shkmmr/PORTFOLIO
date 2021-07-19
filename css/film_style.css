@@ -434,11 +434,13 @@ img {
     padding: 0.3rem;
   }
 }
+/*
 @media (max-width: 480px) {
   .container {
     column-count: 1;
   }
 }
+*/
 .grid {
   padding: 0.6rem;
   -webkit-column-break-inside: avoid;
@@ -447,7 +449,7 @@ img {
 }
 .grid > * {
     border-radius: 0.2rem;
-  }
+}
 
 
 
