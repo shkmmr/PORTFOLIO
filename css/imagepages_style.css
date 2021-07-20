@@ -25,7 +25,7 @@ body{
     overflow: hidden;
 }
 /*下からフェードインするアニメーション*/
-body {
+#home {
    opacity: 0;
    animation-name: fadein-bottom;
    animation-duration: 2s;               /*時間*/
@@ -337,7 +337,7 @@ header {
 @media screen and (max-width: 620px) {
   #navi #navibtn {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
   }
@@ -487,6 +487,40 @@ header {
     }
 }
 
+/* トップへ戻る */
+#page_top{
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 0;
+  bottom: 30px;
+  background: rgba(150, 150, 150, 0.4);
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
 
 /*フッター*/
 footer {
@@ -498,13 +532,3 @@ footer p{
     color: #eee;
     font-size: 0.875rem;
 }
-
-
-/* フェードイン用のCSS */
-/*
-.imgalign {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s 0s ease-out;
-}
-*/

@@ -309,7 +309,7 @@ header {
 @media screen and (max-width: 620px) {
   #navi #navibtn {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
   }
