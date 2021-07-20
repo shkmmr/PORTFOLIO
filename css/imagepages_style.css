@@ -438,7 +438,6 @@ header {
 .caption,
 .caption-center {
     font-size: 0.8rem;
-    padding-right: 2rem;
     font-family: 'Sawarabi Gothic', sans-serif;
     font-weight: normal;
     line-height: 2;
@@ -447,6 +446,7 @@ header {
 }
 .caption {
   text-align: right;
+  padding-right: 2rem;
 }
 .caption-center {
   text-align: center;
