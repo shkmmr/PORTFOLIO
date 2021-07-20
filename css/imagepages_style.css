@@ -405,6 +405,14 @@ header {
 .imgalign {
     margin: 7% 0% 1% 0%;
 }
+.box-fadein img {
+  opacity: 0;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+}
+.box-fadein.lazyloaded img.lazyloaded {
+  opacity: 1;
+}
 /*見出し*/
 .page-title {
     font-size: 1.5rem;
@@ -491,9 +499,12 @@ footer p{
     font-size: 0.875rem;
 }
 
+
 /* フェードイン用のCSS */
+/*
 .imgalign {
     opacity: 0;
     transform: translateY(20px);
     transition: all 1s 0s ease-out;
 }
+*/

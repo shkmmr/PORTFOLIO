@@ -402,6 +402,14 @@ header {
     z-index: 10;
     position: relative; /*z-indexを使うため*/
 }
+.box-fadein img {
+  opacity: 0;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+}
+.box-fadein.lazyloaded img.lazyloaded {
+  opacity: 1;
+}
 /*見出し*/
 .page-title {
     font-size: 1.5rem;
