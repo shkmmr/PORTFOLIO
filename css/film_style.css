@@ -445,13 +445,24 @@ header {
     height:auto;
 }
 @media screen and (max-width: 620px){
-    .column-a {
-        margin-right: 1rem;
+    /*column-a,bともにmargin変更*/
+    .container ol {
+        margin:0 1rem;
     }
-    .column-b {
-        margin-left: 1rem;
+    .container ol li {
+        margin-top: 2rem;
     }
 }
+
+/*ホバー時縮小*/
+.container ol li {
+    transition: all 0.5s ease-out;
+}
+.container ol li:hover{
+    transform: scale(0.95);
+    transition: all 0.5s ease-out;
+}
+
 
 /* スマホ用レイアウト：本文用 */
 @media screen and (max-width: 620px){
@@ -462,9 +473,6 @@ header {
         margin-top: 5rem;
         padding-bottom: 2rem;
         font-size: 1.3rem;
-    }
-    .imgalign {
-        margin: 15% 0 1% 0;
     }
     .sub-content{
         font-size: 1rem;
@@ -524,11 +532,4 @@ footer {
 footer p{
     color: #eee;
     font-size: 0.875rem;
-}
-
-/* フェードイン用のCSS */
-.imgalign {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s 0s ease-out;
 }
