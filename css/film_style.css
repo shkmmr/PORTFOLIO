@@ -444,6 +444,14 @@ header {
     width:100%;
     height:auto;
 }
+@media screen and (max-width: 620px){
+    .column-a {
+        margin-right: 1rem;
+    }
+    .column-b {
+        margin-left: 1rem;
+    }
+}
 
 /* スマホ用レイアウト：本文用 */
 @media screen and (max-width: 620px){
