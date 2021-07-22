@@ -205,22 +205,21 @@ header {
     height: auto;
     width: 100%;
     padding: 0px 20px;
-    padding-left: 1rem;
+    margin-left: 1rem;
     margin-right: -20px;
     position: relative;
   }
   #menu-left a {
     max-height: inherit;
-    margin: 0;
-    padding-left: 4rem;
+    margin-left: 4rem;
+    padding: 0;
     font-size: 1rem;
     color: #DDD;
   }
   #menu li a,
   #menu li > label{
     max-height: inherit;
-    margin: 0;
-    padding-left: 2rem;
+    margin-left: 2rem;
     font-size: 1rem;
     color: #DDD;
   }
@@ -239,6 +238,7 @@ header {
   #menu > li > ul li a,
   #menu > li > ul li label{
     padding: 0rem;
+    margin-left: 0.5rem;
   }
   #menu li ul li:last-child {
     border-bottom: none;
@@ -247,7 +247,7 @@ header {
   #menu > li > ul > li > ul {
     position: relative;
     display: none;
-    left: 0;
+    left: 0%;
   }
   /* 第一階層のphotographがクリックされた時 */
   #menu input[type="checkbox"]:checked ~ label ~ ul {
