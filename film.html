@@ -13,6 +13,12 @@
             <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
             <link rel="stylesheet" href="css/film_style.css">
+            <!--photoswipe-->
+            <link rel="stylesheet" type="text/css" href="css/photoswipe.css">
+            <link rel="stylesheet" type="text/css" href="css/default-skin.css">
+            <script type="text/javascript" src="javascript/photoswipe.min.js"></script>
+            <script type="text/javascript" src="javascript/photoswipe-ui-default.min.js"></script>
+            <script type="text/javascript" src="javascript/photoswipe-simplify.js"></script>
     </head>
 
     <body>
@@ -64,76 +70,76 @@
 
             <main id="main" class="fade-in-bottom wrapper">
                 <h2 class="page-title">f i l m</h2>
-                <div class="container">
+                <div class="container" data-pswp>
                     <ol class="column-a">
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (1).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (2).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (3).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (4).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (5).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (6).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (7).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (8).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (9).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (10).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (11).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (12).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (13).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (14).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (15).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (16).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (17).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (18).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (19).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (20).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (21).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (22).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (23).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (24).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (25).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (26).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (27).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (28).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (29).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (30).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (31).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (32).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_a (33).jpg" alt=""></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (1).jpg"><img class="lazyload" src="images/film_a (1).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (2).jpg"><img class="lazyload" src="images/film_a (2).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (3).jpg"><img class="lazyload" src="images/film_a (3).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (4).jpg"><img class="lazyload" src="images/film_a (4).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (5).jpg"><img class="lazyload" src="images/film_a (5).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (6).jpg"><img class="lazyload" src="images/film_a (6).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (7).jpg"><img class="lazyload" src="images/film_a (7).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (8).jpg"><img class="lazyload" src="images/film_a (8).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (9).jpg"><img class="lazyload" src="images/film_a (9).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (10).jpg"><img class="lazyload" src="images/film_a (10).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (11).jpg"><img class="lazyload" src="images/film_a (11).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (12).jpg"><img class="lazyload" src="images/film_a (12).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (13).jpg"><img class="lazyload" src="images/film_a (13).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (14).jpg"><img class="lazyload" src="images/film_a (14).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (15).jpg"><img class="lazyload" src="images/film_a (15).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (16).jpg"><img class="lazyload" src="images/film_a (16).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (17).jpg"><img class="lazyload" src="images/film_a (17).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (18).jpg"><img class="lazyload" src="images/film_a (18).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (19).jpg"><img class="lazyload" src="images/film_a (19).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (20).jpg"><img class="lazyload" src="images/film_a (20).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (21).jpg"><img class="lazyload" src="images/film_a (21).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (22).jpg"><img class="lazyload" src="images/film_a (22).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (23).jpg"><img class="lazyload" src="images/film_a (23).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (24).jpg"><img class="lazyload" src="images/film_a (24).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (25).jpg"><img class="lazyload" src="images/film_a (25).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (26).jpg"><img class="lazyload" src="images/film_a (26).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (27).jpg"><img class="lazyload" src="images/film_a (27).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (28).jpg"><img class="lazyload" src="images/film_a (28).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (29).jpg"><img class="lazyload" src="images/film_a (29).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (30).jpg"><img class="lazyload" src="images/film_a (30).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (31).jpg"><img class="lazyload" src="images/film_a (31).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (32).jpg"><img class="lazyload" src="images/film_a (32).jpg" alt=""></a></li>
+                      <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_a (33).jpg"><img class="lazyload" src="images/film_a (33).jpg" alt=""></a></li>
                     </ol>
                     <ol class="column-b">
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (1).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (2).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (3).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (4).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (5).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (6).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (7).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (8).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (9).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (10).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (11).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (12).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (13).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (14).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (15).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (16).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (17).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (18).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (19).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (20).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (21).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (22).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (23).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (24).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (25).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (26).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (27).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (28).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (29).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (30).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (31).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (32).jpg" alt=""></li>
-                      <li class="box-fadein lazyload" data-expand="-20"><img class="lazyload" src="images/film_b (33).jpg" alt=""></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (1).jpg"><img class="lazyload" src="images/film_b (1).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (2).jpg"><img class="lazyload" src="images/film_b (2).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (3).jpg"><img class="lazyload" src="images/film_b (3).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (4).jpg"><img class="lazyload" src="images/film_b (4).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (5).jpg"><img class="lazyload" src="images/film_b (5).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (6).jpg"><img class="lazyload" src="images/film_b (6).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (7).jpg"><img class="lazyload" src="images/film_b (7).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (8).jpg"><img class="lazyload" src="images/film_b (8).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (9).jpg"><img class="lazyload" src="images/film_b (9).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (10).jpg"><img class="lazyload" src="images/film_b (10).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (11).jpg"><img class="lazyload" src="images/film_b (11).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (12).jpg"><img class="lazyload" src="images/film_b (12).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (13).jpg"><img class="lazyload" src="images/film_b (13).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (14).jpg"><img class="lazyload" src="images/film_b (14).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (15).jpg"><img class="lazyload" src="images/film_b (15).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (16).jpg"><img class="lazyload" src="images/film_b (16).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (17).jpg"><img class="lazyload" src="images/film_b (17).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (18).jpg"><img class="lazyload" src="images/film_b (18).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (19).jpg"><img class="lazyload" src="images/film_b (19).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (20).jpg"><img class="lazyload" src="images/film_b (20).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (21).jpg"><img class="lazyload" src="images/film_b (21).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (22).jpg"><img class="lazyload" src="images/film_b (22).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (23).jpg"><img class="lazyload" src="images/film_b (23).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (24).jpg"><img class="lazyload" src="images/film_b (24).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (25).jpg"><img class="lazyload" src="images/film_b (25).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (26).jpg"><img class="lazyload" src="images/film_b (26).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (27).jpg"><img class="lazyload" src="images/film_b (27).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (28).jpg"><img class="lazyload" src="images/film_b (28).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (29).jpg"><img class="lazyload" src="images/film_b (29).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (30).jpg"><img class="lazyload" src="images/film_b (30).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (31).jpg"><img class="lazyload" src="images/film_b (31).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (32).jpg"><img class="lazyload" src="images/film_b (32).jpg" alt=""></a></li>
+                        <li class="box-fadein lazyload" data-expand="-20"><a href="images/film_b (33).jpg"><img class="lazyload" src="images/film_b (33).jpg" alt=""></a></li>
                     </ol>
                 </div>
             </main>
@@ -150,5 +156,6 @@
         <script src="javascript/slidingpages.js"></script>
         <script src="javascript/lazysizes.min.js"></script>
         <script src="javascript/pagetop.fadein.js"></script>
+        <script charset="utf-8">photoswipeSimplify.init();</script>
     </body>
 </html>
